@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	def index
-		@new_user = User.all.last[:name]
+		
 	end
 
 	def new
@@ -9,16 +9,18 @@ class UsersController < ApplicationController
 
 	def create
 		if User.all.map(&:name).include? params[:user][:name]
-			render 'show'
+			redirect_to user_path(User.where(name: params[:user][:name]).first[:id])
 		else
 			@user = User.new params[:user].permit(:name)
 			@user.save
-			redirect_to users_path
+			@new_user = User.all.last[:name]
+			render 'create'
 		end
 	end
 
 	def show
 		@user = User.find(params[:id])
+		# binding.pry
 
 	end
 
