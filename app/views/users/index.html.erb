@@ -1,5 +1,5 @@
 <h3>
-  Welcome 
-  <%= @new_user %>
-  click below to explore the islands...
+	<% @users.each do |u| %>
+		<%= u[:name]  %>
+	<% end %>
 </h3>
