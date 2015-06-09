@@ -9,8 +9,9 @@ class UserIslandController < ApplicationController
 	end
 
   def destroy
-    binding.pry
-
+    island = UserIsland.where(island_id: params[:id]) && UserIsland.where(user_id: params[:user_id])
+    island.first.destroy
+    redirect_to user_path(params[:user_id])
   end
 
 

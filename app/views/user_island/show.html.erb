@@ -3,7 +3,7 @@
 </nav>
 
 <nav>
-	<li><%= link_to 'remove this island from your list', user_path(@user), method: :delete %></li>
+	<li><%= link_to 'remove this island from your list', user_island_path(@user, @island), method: :delete %></li>
 </nav>
 
 <h1> <%= @user.name %> </h1>
