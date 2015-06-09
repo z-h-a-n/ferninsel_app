@@ -17,7 +17,7 @@
 <h2>Islands you haven't visited</h2>
 <ul>
 	<% (Island.all.map(&:name) - @user.islands.map(&:name)).each do |island| %>
-		<!-- link to island show page -->
-		<li><%= link_to island, island_path(island) %></li>
+		<!-- add island to user_island -->
+		<li><%= link_to island, user_island_path(@user, @islands.where(name: island).first.id) %></li>
 	<% end %>
 </ul>

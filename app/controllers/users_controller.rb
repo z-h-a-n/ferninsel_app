@@ -20,6 +20,8 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@islands = Island.all
+
 	end
 
 	def destroy

@@ -2,6 +2,10 @@
 	<li><%= link_to 'islands you have visited', user_path(@user)  %></li>
 </nav>
 
+<nav>
+	<li><%= link_to 'remove this island from your list', user_path(@user), method: :delete %></li>
+</nav>
+
 <h1> <%= @user.name %> </h1>
 
 <h2><%= @island[:name].upcase %></h2>
