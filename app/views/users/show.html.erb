@@ -1,4 +1,4 @@
-<h1>Show all islands a user have visited</h1>
+<h1>islands you have visited</h1>
 
 <h2>
 	<%= @user.name %>
@@ -6,9 +6,10 @@
 </h2>
 
 <ul>
-	<% @user.islands.each do |i| %>
+	<% @user.islands.each do |island| %>
 		<li>
-			<%= i[:name] %>
+			<!-- link to user_island show page -->
+			<%= link_to island[:name], user_island_path(@user, island) %>
 		</li>
 	<% end %>
 </ul>
@@ -16,6 +17,7 @@
 <h2>Islands you haven't visited</h2>
 <ul>
 	<% (Island.all.map(&:name) - @user.islands.map(&:name)).each do |island| %>
-		<li><%= island  %></li>
+		<!-- link to island show page -->
+		<li><%= link_to island, island_path(island) %></li>
 	<% end %>
 </ul>

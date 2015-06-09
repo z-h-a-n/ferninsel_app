@@ -1,0 +1,13 @@
+<nav>
+	<li><%= link_to 'islands you have visited', user_path(@user)  %></li>
+</nav>
+
+<h1> <%= @user.name %> </h1>
+
+<h2><%= @island[:name].upcase %></h2>
+
+<h3>Size_ <%= @island[:size] %> km2</h3>
+
+<h3>Region_ <%= @island[:region].capitalize %> Ocean </h3>
+
+<h3>Population_ <%= @island[:population] %> </h3>

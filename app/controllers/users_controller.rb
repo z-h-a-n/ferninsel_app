@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 		else
 			@user = User.new params[:user].permit(:name)
 			@user.save
-			@new_user = User.all.last[:name]
+			@new_user = User.all.last
 			render 'create'
 		end
 	end

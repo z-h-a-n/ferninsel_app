@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<nav>
+	<li> <%= link_to('list all visitors', users_path) %> </li>
+	<li> <%= link_to('home', new_user_path)  %></li>
+</nav>
+
+
+
 <%= yield %>
 
 </body>

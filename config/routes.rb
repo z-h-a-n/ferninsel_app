@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :users
+  resources :users do
+    resources :islands, controller: 'user_island'
+  end
 
+  resources :islands
+  
   # You can have the root of your site routed with "root"
   root 'users#new'
 
