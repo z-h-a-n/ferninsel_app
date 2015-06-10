@@ -1,4 +1,4 @@
-<h1>islands you have visited</h1>
+<h2>islands you have visited</h1>
 
 <h2>
 	<%= @user.name %>
@@ -21,3 +21,9 @@
 		<li><%= link_to island, user_island_path(@user, @islands.where(name: island).first.id) %></li>
 	<% end %>
 </ul>
+
+<!-- google map -->
+<div id="map-canvas"></div>
+<script>
+	google.maps.event.addDomListener(window, 'load', GoogleMap.initialize("<%= @user.id %>"));
+</script>

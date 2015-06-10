@@ -4,23 +4,20 @@
   <title>FerninselApp</title>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,700' rel='stylesheet' type='text/css'>
- <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100' rel='stylesheet' type='text/css'>
-
+ 	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100' rel='stylesheet' type='text/css'>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+	<script src="http://threejs.org/build/three.min.js"></script>
+	<script src="http://threejs.org/examples/js/renderers/Projector.js"></script>
+	<script src="http://threejs.org/examples/js/renderers/CanvasRenderer.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
 </head>
 <body>
-
-<nav>
-	<li> <%= link_to('list all visitors', users_path) %> </li>
-	<li> <%= link_to('home', new_user_path)  %></li>
-</nav>
-
-
-
-<%= yield %>
-
+	<nav>
+		<li><%= link_to('list all visitors', users_path) %></li>
+		<li><%= link_to('home', new_user_path)  %></li>
+	</nav>
+	<%= yield %>
 </body>
 </html>
