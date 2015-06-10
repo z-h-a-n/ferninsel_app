@@ -3,11 +3,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :users do
-      resources :islands, controller: 'user_island' do
-    end
+      resources :islands, controller: 'user_island'
   end
 
-  
+  resources :islands do
+    resources :creatures
+  end  
 
   
   # You can have the root of your site routed with "root"

@@ -13,7 +13,5 @@ class UserIslandController < ApplicationController
     island.first.destroy
     redirect_to user_path(params[:user_id])
   end
-
-
 end
 

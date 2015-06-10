@@ -1,0 +1,47 @@
+body {
+	font-family: 'Source Code Pro';
+
+}
+
+h1 {
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 100;
+	font-size: 50px;
+	text-align: center;
+	color: white;
+}
+
+
+li {
+	list-style-type: none;
+	a {
+		text-decoration: none;
+	}
+}
+
+.form-wrapper {
+	display: block;
+	text-align: center;
+	input{
+		&[type="submit"] {
+		  display: inline-block;
+		  text-align: center;
+		  background: #00ffaa;
+		  color: white;
+		  border: none;
+		  padding: 2px 5px;
+		  -moz-border-radius: 2px;
+		  cursor: pointer;
+		}
+		&[placeholder] {
+			// text-align: center;
+			color: #00ffaa;	
+			font-weight: 100;
+		} 
+		background-color: transparent;
+    border: 1px solid #00ffaa;
+	}
+}
+
+
+
