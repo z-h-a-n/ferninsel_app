@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require three.min
+//= require projector
+//= require canvasRenderer
 //= require_tree .

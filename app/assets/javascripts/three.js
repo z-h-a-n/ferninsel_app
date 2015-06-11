@@ -12,25 +12,20 @@ scene,
 renderer;
 
 $(function(){
-	if ($('.three').length > 0) {
-		
-
+	if ($('#three').length > 0) {
 		init();
 		animate();
 	}
-	
 });
 
 function init() {
-	var container = document.getElementById('#three'),
+	var container = document.getElementById('three'),
 			separation = 100, 
 			amountX = 50, 
 			amountY = 50,
 			particles, 
 			particle;
 
-	// container = document.createElement('div');
-	// document.body.appendChild(container);
 
 	camera = new THREE.PerspectiveCamera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
 	camera.position.z = 1000;
@@ -44,7 +39,7 @@ function init() {
 
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
-	container.appendChild( renderer.domElement );
+	container.appendChild(renderer.domElement);
 
 	// particles
 	var PI2 = Math.PI * 2;

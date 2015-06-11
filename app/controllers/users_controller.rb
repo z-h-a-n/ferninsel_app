@@ -21,9 +21,6 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@islands = Island.all
-		if request.xhr? 
-			render json: @user.islands
-		end
 	end
 
 	def destroy

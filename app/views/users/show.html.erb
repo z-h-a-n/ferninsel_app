@@ -1,29 +1,47 @@
-<h2>islands you have visited</h1>
+<div class="box">
 
-<h2>
-	<%= @user.name %>
-	<%= link_to('DELETE', user_path(@user.id), method: :delete)  %>
-</h2>
+	<div id="left">
+		<nav class="new">
+			<li><%= link_to('team', users_path) %></li>
+			<li><%= link_to('home', new_user_path) %></li>
+		</nav>	
+	
+		<div class="circle">
+			<h2><%= @user.name %></h2>
+		</div>
+		<div class="delete">
+			<%= link_to('delete', user_path(@user.id), method: :delete)  %>
+		</div>
 
-<ul>
-	<% @user.islands.each do |island| %>
-		<li>
-			<!-- link to user_island show page -->
-			<%= link_to island[:name], user_island_path(@user, island) %>
-		</li>
-	<% end %>
-</ul>
+	</div>
 
-<h2>Islands you haven't visited</h2>
-<ul>
-	<% (Island.all.map(&:name) - @user.islands.map(&:name)).each do |island| %>
-		<!-- add island to user_island -->
-		<li><%= link_to island, user_island_path(@user, @islands.where(name: island).first.id) %></li>
-	<% end %>
-</ul>
+	<div id="right">
 
-<!-- google map -->
-<div id="map-canvas"></div>
-<script>
-	google.maps.event.addDomListener(window, 'load', GoogleMap.initialize("<%= @user.id %>"));
-</script>
+		<h2><img src="/assets/iconLarge1.png">Previous Expedition</h2>
+		<ul>
+			<% @user.islands.each do |island| %>
+				<li>
+					<!-- link to user_island show page -->
+					<%= link_to island[:name], user_island_path(@user, island) %>
+				</li>
+			<% end %>
+		</ul>
+
+		<h2><img src="/assets/iconlarger.png">New Expedition</h2>
+		<ul>
+			<% (Island.all.map(&:name) - @user.islands.map(&:name)).each do |island| %>
+				<!-- add island to user_island -->
+				<li><%= link_to island, user_island_path(@user, @islands.where(name: island).first.id) %></li>
+			<% end %>
+		</ul>
+
+
+	</div>
+
+	</div>
+	<!-- google map -->
+	<div id="map-canvas"></div>
+	<script>
+		google.maps.event.addDomListener(window, 'load', GoogleMap.initialize("<%= @user.id %>"));
+	</script>
+

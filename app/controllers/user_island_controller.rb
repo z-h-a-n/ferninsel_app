@@ -1,5 +1,21 @@
 class UserIslandController < ApplicationController
-	def show
+	
+  def visited
+    @user = User.find(params[:user_id])
+    if request.xhr? 
+      render json: @user.islands
+    end
+  end
+
+  def not_visited
+    @user = User.find(params[:user_id])
+    @not_visited = Island.all - @user.islands
+    if request.xhr? 
+      render json: @not_visited
+    end
+  end
+
+  def show
   	@island = Island.find(params[:id])
   	@user = User.find(params[:user_id])
     if !@user.islands.include? @island

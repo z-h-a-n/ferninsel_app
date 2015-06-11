@@ -15,3 +15,102 @@ li {
 	padding: 3px;
 	background-color: #00ffaa;
 }
+
+#left {
+	// width: 15%;
+	margin-left: 10px;
+	height: 150px;
+	// border: 1px solid #00ffaa;
+	display: inline-block;
+	vertical-align: top;
+	nav {
+		margin-top: 0px;
+		a {
+			text-decoration: none;
+		}
+	}
+	.delete {
+		a {
+			font-family: 'Source Code Pro';
+			font-weight: 400;
+			font-size: 10px;
+			text-decoration: none;
+			margin: 2px;
+			padding: 3px;
+			background-color: #00ffaa;
+		}
+	}
+	.circle {
+		margin: 20px;
+		border-radius: 50%;
+		width: 70px;
+		height: 70px; 
+		border: 1px solid #00ffaa;
+		h2 {
+			margin-top: 25px;
+			max-width: 200px;
+			margin-left: 10px;
+				img {
+				max-height: 15px;
+				}
+			}	
+	}
+	a:hover {
+		background-color: white;
+	}	
+	li:hover {
+		background-color: white;
+	}
+}
+
+
+
+#right {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	width: 83%;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	height: 150px;
+	border-left: 1px solid #00ffaa;
+	display: inline-block;
+	h2{
+		max-width: 200px;
+		border-top: 1px solid #00ffaa;
+		img {
+		max-height: 15px;
+		}
+	}
+	li:hover {
+		background-color: white;
+	}
+
+	li {
+		position: relative;
+		list-style-type: none;
+		margin-left: -6px;
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+.box {
+	margin-top: 10px;;
+	vertical-align: top;
+ 	display: inline-block;
+ 	margin-right: -4px;
+ 	width: 100%;
+ 	border-bottom: 1px solid #00ffaa;
+ 	padding-bottom: 10px;
+
+}
+
+#map-canvas {
+	border: 1px solid #00ffaa;
+	margin: 10px;
+}
+
+

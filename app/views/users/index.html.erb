@@ -1,5 +1,21 @@
-<h3>
-	<% @users.each do |u| %>
-		<%= u[:name]  %>
-	<% end %>
-</h3>
+<div id="right">	
+		<ul>
+			<% @users.each do |user| %>
+				<div>
+					<li>
+						<%= link_to user[:name], user_path(user)  %>
+					</li>	
+				</div>
+			<% end %>
+		</ul>	
+</div>
+
+
+<div id="three"></div>
+
+<div id="left">
+	<nav class="new">
+				<li><%= link_to('list all visitors', users_path) %></li>
+				<li><%= link_to('home', new_user_path) %></li>
+	</nav>	
+</div>

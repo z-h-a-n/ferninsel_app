@@ -7,8 +7,6 @@ class IslandsController < ApplicationController
 
 	def show
 		@island = Island.where(name: params[:id])
-
 	end
-
 
 end
