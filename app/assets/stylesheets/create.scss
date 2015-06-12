@@ -1,0 +1,17 @@
+#create {
+	animation: fadein 5s;
+  -webkit-animation: fadein 5s; /* Safari and Chrome */
+	h2 {
+		text-align: center;
+		margin-top: 50px;
+		a{
+			text-decoration: none;
+			color: white;
+		 	border: 1px solid #00ffaa;
+  		padding: 5px;
+		}
+		a:hover {
+			background-color: #00ffaa;
+		}
+	}
+}

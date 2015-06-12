@@ -22,16 +22,16 @@
 			<% @user.islands.each do |island| %>
 				<li>
 					<!-- link to user_island show page -->
-					<%= link_to island[:name], user_island_path(@user, island) %>
+					<%= link_to island[:name].capitalize, user_island_path(@user, island) %>
 				</li>
 			<% end %>
 		</ul>
 
-		<h2><img src="/assets/iconlarger.png">New Expedition</h2>
+		<h2><img src="/assets/iconlarger.png">Future Expedition</h2>
 		<ul>
 			<% (Island.all.map(&:name) - @user.islands.map(&:name)).each do |island| %>
 				<!-- add island to user_island -->
-				<li><%= link_to island, user_island_path(@user, @islands.where(name: island).first.id) %></li>
+				<li><%= link_to island.capitalize, user_island_path(@user, @islands.where(name: island).first.id) %></li>
 			<% end %>
 		</ul>
 

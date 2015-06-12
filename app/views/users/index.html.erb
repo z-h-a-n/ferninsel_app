@@ -3,7 +3,15 @@
 			<% @users.each do |user| %>
 				<div>
 					<li>
-						<%= link_to user[:name], user_path(user)  %>
+						<div id="show"> 
+						<%= link_to user[:name].upcase, user_path(user)  %> </div>
+							<% user.islands.each do |island| %>
+								<li id="islandList">
+									<%= island[:name].upcase %>
+									| Region: 
+									<%= island[:region].capitalize %>
+								</li>
+							<% end %>
 					</li>	
 				</div>
 			<% end %>
